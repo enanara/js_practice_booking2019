@@ -61,9 +61,10 @@ function duplicateNumbers(arr1, arr2) {
   let array = arr1.filter (function(x){
     return arr2.includes(x);
   });
-  return (array.sort()).filter(function(x,pos){
-    return array.indexOf(x)==pos;
-  });
+  // return (array.sort()).filter(function(x,pos){
+  //   return array.indexOf(x)==pos;
+  // });
+  return [... new Set(array)].sort();
 }
 
 module.exports = {
