@@ -7,46 +7,24 @@ function getSquares(nums) {
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  let array = [words[0]];
-  for (i=1; i<words.length; i++){
-    array.push(words[i].replace(words[i][0],words[i][0].toUpperCase()));
-  }
-  return array.join('');
+  // Your code here
 }
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  let sum=0;
-  for (let i=0;i<people.length; i++){
-    sum += people[i].subjects.length;
-  }
-  return sum;
+  // Your code here
 }
 
 function checkIngredients(menu, ingredient) {
   if (menu === undefined) throw new Error("menu is required");
   if (!ingredient) throw new Error("ingredient is required");
-  let isInclude = false;
-  for (let x of menu){
-    if(x.ingredients.includes(ingredient)){
-      isInclude = true;
-    }
-  }
-  return isInclude;
+  // Your code here
 }
 
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
-  let array = [];
-  for (let i=0; i<arr1.length;i++){
-    if (arr2.includes(arr1[i])){
-      if (!array.includes(arr1[i])){
-        array.push(arr1[i]);
-      }
-    }
-  }
-  return array.sort();
+  // Your code here
 }
 
 module.exports = {
