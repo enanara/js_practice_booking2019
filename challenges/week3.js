@@ -7,11 +7,16 @@ function getSquares(nums) {
 
 function camelCaseWords(words) {
   if (words === undefined) throw new Error("words is required");
-  let array = [words[0]];
-  for (let i=1; i<words.length; i++){
-    array.push(words[i].replace(words[i][0],words[i][0].toUpperCase()));
-  }
-  return array.join('');
+  // let array = [words[0]];
+  // for (let i=1; i<words.length; i++){
+  //   array.push(words[i].replace(words[i][0],words[i][0].toUpperCase()));
+  // }
+  // return array.join('');
+  let arr = words.map(function(word){
+    return word.replace(word[0],word[0].toUpperCase());
+  });
+  let str = arr.join('');
+  return str.replace(str[0],str[0].toUpperCase());
 }
 
 function getTotalSubjects(people) {
