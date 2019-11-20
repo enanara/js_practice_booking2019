@@ -21,11 +21,17 @@ function camelCaseWords(words) {
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-  let sum=0;
-  for (let i=0;i<people.length; i++){
-    sum += people[i].subjects.length;
-  }
-  return sum;
+  // let sum=0;
+  // for (let i=0;i<people.length; i++){
+  //   sum += people[i].subjects.length;
+  // }
+  // return sum;
+  let numArr = people.map(function(person){
+    return (person.subjects).length;
+  });
+  return numArr.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue;
+  });
 }
 
 function checkIngredients(menu, ingredient) {
