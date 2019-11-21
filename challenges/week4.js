@@ -32,26 +32,21 @@ function getCities(users) {
   return users.map(function(x){
     return x.data.city.displayName;
   });
-  // let result=[];
-  // // for (let i=0;i<users.length;i++){
-  // //   result.push(users[i].data.city.displayName);
-  // // }
-  // users.forEach(function(x){
-  //   result.push(x.data.city.displayName);
-  // });
-  // return result;
 }
 
 function getSquareRoots(nums) {
   if (!nums) throw new Error("nums is required");
-  let result=[];
-  // for (let i=0;i<nums.length;i++){
-  //   result.push(Math.round((Math.sqrt(nums[i]))*100)/100);
-  // }
-  nums.forEach(function(x){
-    result.push((Math.round(Math.sqrt(x)*100))/100);
+  return nums.map(function(x){
+    return Math.round(Math.sqrt(x)*100)/100;
   });
-  return result;
+  // let result=[];
+  // // for (let i=0;i<nums.length;i++){
+  // //   result.push(Math.round((Math.sqrt(nums[i]))*100)/100);
+  // // }
+  // nums.forEach(function(x){
+  //   result.push((Math.round(Math.sqrt(x)*100))/100);
+  // });
+  // return result;
 }
 
 function findSentencesContaining(sentences, str) {
