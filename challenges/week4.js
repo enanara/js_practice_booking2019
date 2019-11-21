@@ -91,11 +91,16 @@ function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
   let result=[];
-  for (let i=0;i<sentences.length;i++){
-    if((sentences[i].toLowerCase()).includes(str.toLowerCase())){
-      result.push(sentences[i]);
+  // for (let i=0;i<sentences.length;i++){
+  //   if((sentences[i].toLowerCase()).includes(str.toLowerCase())){
+  //     result.push(sentences[i]);
+  //   }
+  // }
+  sentences.forEach(function(x){
+    if(x.toLowerCase().includes(str.toLowerCase())){
+      result.push(x);
     }
-  }
+  });
   return result;
 }
 
