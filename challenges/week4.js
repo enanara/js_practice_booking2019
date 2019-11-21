@@ -29,14 +29,17 @@ function getIntegers(nums) {
 
 function getCities(users) {
   if (!users) throw new Error("users is required");
-  let result=[];
-  // for (let i=0;i<users.length;i++){
-  //   result.push(users[i].data.city.displayName);
-  // }
-  users.forEach(function(x){
-    result.push(x.data.city.displayName);
+  return users.map(function(x){
+    return x.data.city.displayName;
   });
-  return result;
+  // let result=[];
+  // // for (let i=0;i<users.length;i++){
+  // //   result.push(users[i].data.city.displayName);
+  // // }
+  // users.forEach(function(x){
+  //   result.push(x.data.city.displayName);
+  // });
+  // return result;
 }
 
 function getSquareRoots(nums) {
