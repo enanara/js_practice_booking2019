@@ -47,30 +47,13 @@ function findSentencesContaining(sentences, str) {
   return sentences.filter(function(x){
     return x.toLowerCase().includes(str.toLowerCase());
   });
-  // let result=[];
-  // // for (let i=0;i<sentences.length;i++){
-  // //   if((sentences[i].toLowerCase()).includes(str.toLowerCase())){
-  // //     result.push(sentences[i]);
-  // //   }
-  // // }
-  // sentences.forEach(function(x){
-  //   if(x.toLowerCase().includes(str.toLowerCase())){
-  //     result.push(x);
-  //   }
-  // });
-  // return result;
 }
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  let result=[];
-  // for (let i=0;i<triangles.length;i++){
-  //   result.push(Math.max(...triangles[i]));
-  // }
-  triangles.forEach(function(x){
-    result.push(Math.max(...x));
+  return triangles.map(function(x){
+    return Math.max(...x);
   });
-  return result;
 }
 
 module.exports = {
