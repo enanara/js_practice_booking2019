@@ -39,31 +39,26 @@ function getSquareRoots(nums) {
   return nums.map(function(x){
     return Math.round(Math.sqrt(x)*100)/100;
   });
-  // let result=[];
-  // // for (let i=0;i<nums.length;i++){
-  // //   result.push(Math.round((Math.sqrt(nums[i]))*100)/100);
-  // // }
-  // nums.forEach(function(x){
-  //   result.push((Math.round(Math.sqrt(x)*100))/100);
-  // });
-  // return result;
 }
 
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  let result=[];
-  // for (let i=0;i<sentences.length;i++){
-  //   if((sentences[i].toLowerCase()).includes(str.toLowerCase())){
-  //     result.push(sentences[i]);
-  //   }
-  // }
-  sentences.forEach(function(x){
-    if(x.toLowerCase().includes(str.toLowerCase())){
-      result.push(x);
-    }
+  return sentences.filter(function(x){
+    return x.toLowerCase().includes(str.toLowerCase());
   });
-  return result;
+  // let result=[];
+  // // for (let i=0;i<sentences.length;i++){
+  // //   if((sentences[i].toLowerCase()).includes(str.toLowerCase())){
+  // //     result.push(sentences[i]);
+  // //   }
+  // // }
+  // sentences.forEach(function(x){
+  //   if(x.toLowerCase().includes(str.toLowerCase())){
+  //     result.push(x);
+  //   }
+  // });
+  // return result;
 }
 
 function getLongestSides(triangles) {
