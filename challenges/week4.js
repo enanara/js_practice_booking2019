@@ -18,11 +18,16 @@ function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
   let result = [];
-  for (let i=0; i<names.length; i++){
-    if(char===names[i][0]){
-      result.push(names[i]);
+  // for (let i=0; i<names.length; i++){
+  //   if(char===names[i][0]){
+  //     result.push(names[i]);
+  //   }
+  // }
+  names.forEach(function(x){
+    if(char===x[0]){
+      result.push(x);
     }
-  }
+  });
   return result;
 }
 
