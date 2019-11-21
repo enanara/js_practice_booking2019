@@ -1,17 +1,21 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
-  let result =[];
-  // for (let i=0; i<nums.length;i++){
-  //   if (nums[i]<1){
-  //     result.push(nums[i]);
-  //   }
-  // }
-  nums.forEach(function(x){
-    if (x<1){
-      result.push(x);
-    }
+  return nums.filter(function(x){
+    return x<1;
   });
-  return result;
+  // let result =[];
+  // // for (let i=0; i<nums.length;i++){
+  // //   if (nums[i]<1){
+  // //     result.push(nums[i]);
+  // //   }
+  // // }
+  // nums.forEach(function(x){
+  //   if (x<1){
+  //     result.push(x);
+  //   }
+  // });
+  // return result;
+
 }
 
 function findNamesBeginningWith(names, char) {
