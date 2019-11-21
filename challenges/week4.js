@@ -3,36 +3,26 @@ function findSmallNums(nums) {
   return nums.filter(function(x){
     return x<1;
   });
-  // let result =[];
-  // // for (let i=0; i<nums.length;i++){
-  // //   if (nums[i]<1){
-  // //     result.push(nums[i]);
-  // //   }
-  // // }
-  // nums.forEach(function(x){
-  //   if (x<1){
-  //     result.push(x);
-  //   }
-  // });
-  // return result;
-
 }
 
 function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
-  let result = [];
-  // for (let i=0; i<names.length; i++){
-  //   if(char===names[i][0]){
-  //     result.push(names[i]);
-  //   }
-  // }
-  names.forEach(function(x){
-    if(char===x[0]){
-      result.push(x);
-    }
+  return names.filter(function(x){
+    return char===x[0];
   });
-  return result;
+  // let result = [];
+  // // for (let i=0; i<names.length; i++){
+  // //   if(char===names[i][0]){
+  // //     result.push(names[i]);
+  // //   }
+  // // }
+  // names.forEach(function(x){
+  //   if(char===x[0]){
+  //     result.push(x);
+  //   }
+  // });
+  // return result;
 }
 
 function findVerbs(words) {
