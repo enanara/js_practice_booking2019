@@ -34,11 +34,16 @@ function findNamesBeginningWith(names, char) {
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
   let result=[];
-  for (let i=0;i<words.length;i++){
-    if(words[i].includes("to ")){
-      result.push(words[i]);
+  // for (let i=0;i<words.length;i++){
+  //   if(words[i].includes("to ")){
+  //     result.push(words[i]);
+  //   }
+  // }
+  words.forEach(function(x){
+    if(x.includes("to ")){
+      result.push(x);
     }
-  }
+  });
   return result;
 }
 
