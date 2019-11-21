@@ -11,34 +11,13 @@ function findNamesBeginningWith(names, char) {
   return names.filter(function(x){
     return char===x[0];
   });
-  // let result = [];
-  // // for (let i=0; i<names.length; i++){
-  // //   if(char===names[i][0]){
-  // //     result.push(names[i]);
-  // //   }
-  // // }
-  // names.forEach(function(x){
-  //   if(char===x[0]){
-  //     result.push(x);
-  //   }
-  // });
-  // return result;
 }
 
 function findVerbs(words) {
   if (!words) throw new Error("words is required");
-  let result=[];
-  // for (let i=0;i<words.length;i++){
-  //   if(words[i].includes("to ")){
-  //     result.push(words[i]);
-  //   }
-  // }
-  words.forEach(function(x){
-    if(x.includes("to ")){
-      result.push(x);
-    }
+  return words.filter(function(x){
+    return x.includes("to ");
   });
-  return result;
 }
 
 function getIntegers(nums) {
