@@ -50,11 +50,16 @@ function findVerbs(words) {
 function getIntegers(nums) {
   if (!nums) throw new Error("nums is required");
   let result=[];
-  for (let i=0;i<nums.length;i++){
-    if (nums[i]%1===0){
-      result.push(nums[i]);
+  // for (let i=0;i<nums.length;i++){
+  //   if (nums[i]%1===0){
+  //     result.push(nums[i]);
+  //   }
+  // }
+  nums.forEach(function(x){
+    if(x%1===0){
+      result.push(x);
     }
-  }
+  });
   return result;
 }
 
