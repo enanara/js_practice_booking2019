@@ -29,11 +29,13 @@ const reverseNumber = n => {
 const sumArrays = arrs => {
   if (arrs === undefined) throw new Error("arrs is required");
   // Your code here!
+  return (arrs.reduce((acc, val) => acc.concat(val), [])).reduce((acc,val)=> acc+val);
 };
 
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
   // Your code here!
+
 };
 
 const findNeedle = (haystack, searchTerm) => {
