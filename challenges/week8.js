@@ -40,7 +40,9 @@ const arrShift = arr => {
   } else {
   const first = arr.shift();
   const last = arr.pop();
-  return arr.unshift(last).push(first);
+  arr.push(first);
+  arr.unshift(last);
+  return arr;
   }
 };
 
@@ -53,6 +55,18 @@ const findNeedle = (haystack, searchTerm) => {
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
   // Your code here!
+  
+  const result = {};
+  const arr = (str.replace(/[^a-zA-Z ]/g, "")).split(' ').map(word => word.toLowerCase());
+  for (let i=0; i<arr.length; i++){
+    const word = arr[i];
+    if (result[word] === undefined){
+      result[word] = 1;
+    } else {
+      result[word] += 1;
+    }
+  }
+  return result; 
 };
 
 module.exports = {
