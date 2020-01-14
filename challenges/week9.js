@@ -39,6 +39,21 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  var compDNA = "";
+  for(let i=0; i<str.length; i++){
+    switch(str[i]){
+      case "A" : compDNA+="T";
+        break;
+      case "C" : compDNA+="G";
+        break;
+      case "T" : compDNA+="A";
+        break;
+      case "G" : compDNA+="C";
+        break;
+      default: return "Valid DNA required";
+    }
+  }
+  return compDNA;
 };
 
 /**

@@ -26,12 +26,24 @@ const {
           expect(isValidDNA("CUTTAGUATGACUATGA")).toBe(false);
           expect(isValidDNA("CGTTACGATGACCATGA")).toBe(true);
           expect(isValidDNA("CGTTACGAUGACCUATGA")).toBe(false);
-      })
+      });
       test("isValidDNA can be case insensitive", () => {
           expect(isValidDNA("tgcatgacctga")).toBe(true);
           expect(isValidDNA("uTga")).toBe(false);
-      })
-  })
-  
+      });
+  });
+  describe("getComplementaryDNA", () => {
+    test("returns a string of complementary DNA that matchs T-A and C-G", ()=> {
+        expect(getComplementaryDNA("A")).toEqual("T");
+        expect(getComplementaryDNA("C")).toEqual("G");
+        expect(getComplementaryDNA("G")).toEqual("C");
+        expect(getComplementaryDNA("T")).toEqual("A");
+        expect(getComplementaryDNA("CGTTACGATGACCATGA")).toEqual("GCAATGCTACTGGTACT");
+        expect(getComplementaryDNA("AAAAAAAAAAACGT")).toEqual("TTTTTTTTTTTGCA");
+        expect(getComplementaryDNA("ACGT")).toEqual("TGCA");
+    });
+    test("returns valid DNA required if string is not a valid DNA", ()=> {
+        expect(getComplementaryDNA("UTGA")).toEqual("Valid DNA required")});
+});
 
   
