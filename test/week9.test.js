@@ -87,7 +87,53 @@ describe("createMatrix", () => {
                 ["a", "a", "a", "a", "a"],
             ]
         );
+        expect(createMatrix(1,"life")).toEqual(
+            [
+                ["life"]
+            ]
+        );
     });
 });
 
+describe("areWeCovered", () => {
+    test("returns a boolean by checking at least 3 staff is working on  given day", () => {
+        const staffArray = [
+            {
+                name: "Sally", 
+                rota: ["Monday", "Thursday", "Sunday"]
+            },
+            {
+                name: "Pedro", 
+                rota: ["Monday", "Tuesday",  "Sunday"]
+            },
+            {
+                name: "Emily", 
+                rota: ["Thursday",  "Saturday", "Sunday"]
+            },
+            {
+                name: "Fiona", 
+                rota: ["Thursday", "Friday", "Sunday"]
+            },
+            {
+                name: "Mark", 
+                rota: ["Friday", "Saturday", "Sunday"]
+            },
+            {
+                name: "Tom", 
+                rota: ["Tuesday", "Wednesday", "Friday"]
+            },
+            {
+                name: "Sam", 
+                rota: ["Tuesday", "Wednesday", "Sunday"]
+            } 
+        ]
+        expect(areWeCovered(staffArray,"Monday")).toBe(false);
+        expect(areWeCovered(staffArray,"Tuesday")).toBe(true);
+        expect(areWeCovered(staffArray,"Wednesday")).toBe(false);
+        expect(areWeCovered(staffArray,"Thursday")).toBe(true);
+        expect(areWeCovered(staffArray,"Friday")).toBe(true);
+        expect(areWeCovered(staffArray,"Saturday")).toBe(false);
+        expect(areWeCovered(staffArray,"Sunday")).toBe(true);
+    });
+});
   
