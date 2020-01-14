@@ -63,4 +63,31 @@ describe("isItPrime", () => {
     });
 });
 
+describe("createMatrix", () => {
+    test("takes 2 arguments and returns a nested array filled with given word", ()=> {
+        expect(createMatrix(3, "foo")).toEqual(
+            [
+                ["foo", "foo", "foo"],
+                ["foo", "foo", "foo"],
+                ["foo", "foo", "foo"]
+            ]
+        );
+        expect(createMatrix(2,"ha")).toEqual(
+            [
+                ["ha", "ha"], 
+                ["ha", "ha"]
+            ]
+        );
+        expect(createMatrix(5,"a")).toEqual(
+            [
+                ["a", "a", "a", "a", "a"],
+                ["a", "a", "a", "a", "a"],
+                ["a", "a", "a", "a", "a"],
+                ["a", "a", "a", "a", "a"],
+                ["a", "a", "a", "a", "a"],
+            ]
+        );
+    });
+});
+
   
