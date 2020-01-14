@@ -19,6 +19,19 @@ const {
       expect(sumMultiples([2, 4, 7, 8, 1, 13])).toBe(0);
     });
   });
+
+  describe("isValidDNA", () => {
+      test("returns true or false by checking if the string only contains C, G, A and T", ()=> {
+          expect(isValidDNA("CGTTACGATGACCATGA")).toBe(true);
+          expect(isValidDNA("CUTTAGUATGACUATGA")).toBe(false);
+          expect(isValidDNA("CGTTACGATGACCATGA")).toBe(true);
+          expect(isValidDNA("CGTTACGAUGACCUATGA")).toBe(false);
+      })
+      test("isValidDNA can be case insensitive", () => {
+          expect(isValidDNA("tgcatgacctga")).toBe(true);
+          expect(isValidDNA("uTga")).toBe(false);
+      })
+  })
   
 
   
