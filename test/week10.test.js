@@ -24,25 +24,32 @@ describe("sumDigits", () => {
 });
 
 describe("createRange", () => {
-    test("returns sum of numbers that are multiple of 3 or 5", () => {
-      expect(createRange([5, 3, 7, 8, 1, 10])).toBe(18);
+    test("returns array of numbers from 1st param to 2nd param and incremented by 3rd param", () => {
+        expect(createRange(3,11,2)).toEqual([3, 5, 7, 9, 11]);
+        expect(createRange(2,17,5)).toEqual([2, 7, 12, 17]);
+        expect(createRange(3,11,3)).toEqual([3, 6, 9]);
+        expect(createRange(5,40,10)).toEqual([5, 15, 25, 35]);
+    });
+    test("if 3rd param is not given increment by 1", () => {
+        expect(createRange(2,8)).toEqual([2, 3, 4, 5, 6, 7, 8]);
+        expect(createRange(19,23)).toEqual([19, 20, 21, 22, 23]);
     });
 });
 
 describe("getScreentimeAlertList", () => {
     test("returns sum of numbers that are multiple of 3 or 5", () => {
-      expect(getScreentimeAlertList([5, 3, 7, 8, 1, 10])).toBe(18);
+      expect(getScreentimeAlertList([5, 3, 7, 8, 1, 10])).toEqual([]);
     });
 });
 
 describe("hexToRGB", () => {
-    test("returns sum of numbers that are multiple of 3 or 5", () => {
-      expect(hexToRGB([5, 3, 7, 8, 1, 10])).toBe(18);
+    test("", () => {
+      expect(hexToRGB()).toBe();
     });
 });
 
 describe("findWinner", () => {
-    test("returns sum of numbers that are multiple of 3 or 5", () => {
-      expect(findWinner([5, 3, 7, 8, 1, 10])).toBe(18);
+    test("", () => {
+      expect(findWinner()).toBe();
     });
 });
