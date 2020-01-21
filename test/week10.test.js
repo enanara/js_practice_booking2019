@@ -167,7 +167,7 @@ describe("getScreentimeAlertList", () => {
       expect(getScreentimeAlertList(users, "2020-01-24")).toEqual(["beth_1234", "ena_0901"]);
     });
     test("if given date data is not reacheble return message", () => {
-        expect(getScreentimeAlertList(users, "2020-01-25")).toEqual("")
+        expect(getScreentimeAlertList(users, "2020-01-25")).toEqual("Date is not valid")
     })
 });
 
