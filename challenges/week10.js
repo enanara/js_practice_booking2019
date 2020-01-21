@@ -1,18 +1,14 @@
-/**
- * This function takes a number, e.g. 123 and returns the sum of all its digits, e.g 6 in this example.
- * @param {Number} n
- */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
   const strigNumber = n.toString();
   const arrayStringDigits = strigNumber.split('');
   const arrayNumberDigits = arrayStringDigits.map(string => Number(string));
+  // To remove NaN 
   const filteredArray = arrayNumberDigits.filter(n => !isNaN(n) );
   return filteredArray.reduce(function(acc, cur){
     return acc+cur;
   });
 };
-
 /**
  * This function creates a range of numbers as an array. It received a start, an end and a step. Step is the gap between numbers in the range. For example, if start = 3, end = 11 and step = 2 the resulting range would be: [3, 5, 7, 9, 11]
  * Both the start and the end numbers are inclusive.
@@ -21,9 +17,14 @@ const sumDigits = n => {
  * @param {Number} end
  * @param {Number} step
  */
-const createRange = (start, end, step) => {
+const createRange = (start, end, step = 1) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
+  var result = [];
+  for (let i=start; i<=end; i+=step){
+    result.push(i);
+  }
+  return result;
 };
 
 /**
