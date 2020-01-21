@@ -4,6 +4,13 @@
  */
 const sumDigits = n => {
   if (n === undefined) throw new Error("n is required");
+  const strigNumber = n.toString();
+  const arrayStringDigits = strigNumber.split('');
+  const arrayNumberDigits = arrayStringDigits.map(string => Number(string));
+  const filteredArray = arrayNumberDigits.filter(n => !isNaN(n) );
+  return filteredArray.reduce(function(acc, cur){
+    return acc+cur;
+  });
 };
 
 /**
