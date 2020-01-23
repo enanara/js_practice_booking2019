@@ -172,8 +172,9 @@ describe("getScreentimeAlertList", () => {
 });
 
 describe("hexToRGB", () => {
-    test("", () => {
-      expect(hexToRGB()).toBe();
+    test("returns rgb color code in decimal given hexadecimal color codes", () => {
+      expect(hexToRGB("#556677")).toBe("rgb (85, 102, 119)");
+      expect(hexToRGB("#556666")).toBe("rgb (85, 102, 102)");
     });
 });
 
