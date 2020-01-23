@@ -41,16 +41,6 @@ const getScreentimeAlertList = (users, date) => {
   return result;
 };
 
-/**
- * This function will receive a hexadecimal color code in the format #FF1133. A hexadecimal code is a number written in hexadecimal notation, i.e. base 16. If you want to know more about hexadecimal notation:
- * https://www.youtube.com/watch?v=u_atXp-NF6w
- * For colour codes, the first 2 chars (FF in this case) represent the amount of red, the next 2 chars (11) represent the amound of green, and the last 2 chars (33) represent the amount of blue.
- * Colours can also be represented in RGB format, using decimal notation.
- * This function should transform the hex code into an RGB code in the format:
- * "rgb(255,17,51)"
- * Hint: You will need to convert each hexadecimal value for R, G and B into its decimal equivalent!
- * @param {String} str
- */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
 
@@ -79,6 +69,24 @@ const hexToRGB = hexStr => {
  */
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
+  var winner = null;
+  const checkCase = (value1, value2, value3)  => {
+    if (winner !== null){
+      return false;
+    }
+    if((value1 === value2 && value1 === value3) && value1 !== null){
+      winner = value1;
+    }
+  }
+  checkCase(board[0][0],board[1][1],board[2][2]);
+  checkCase(board[0][2],board[1][1],board[2][0]);
+  checkCase(board[0][0],board[1][0],board[2][0]);
+  checkCase(board[0][1],board[1][1],board[2][1]);
+  checkCase(board[0][2],board[1][2],board[2][2]);
+  checkCase(board[0][0],board[0][1],board[0][2]);
+  checkCase(board[1][0],board[1][1],board[1][2]);
+  checkCase(board[2][0],board[2][1],board[2][2]);
+  return winner;
 };
 
 module.exports = {
