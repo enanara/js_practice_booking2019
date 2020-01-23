@@ -179,7 +179,26 @@ describe("hexToRGB", () => {
 });
 
 describe("findWinner", () => {
-    test("", () => {
-      expect(findWinner()).toBe();
+    test("returns winner given an board array", () => {
+      expect(findWinner([
+        ["X", "0", null],
+        ["X", null, "0"],
+        ["X", null, "0"]
+      ])).toBe("X");
+      expect(findWinner([
+        ["X", "0", null],
+        ["0", "X", "0"],
+        ["X", "0", "X"]
+      ])).toBe("X");
+      expect(findWinner([
+        ["X", "X", "0"],
+        ["X", "0", "0"],
+        [null, "X", "0"]
+      ])).toBe("0");
+      expect(findWinner([
+        ["X", "0", null],
+        ["X", null, "0"],
+        [null, null, "0"]
+      ])).toBe(null);
     });
 });
